@@ -8,7 +8,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 2.7958154678344727
+  delay: 12.313365936279297
   quality: 1
 - name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
@@ -17,7 +17,7 @@ proxies:
   uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 10.617971420288086
+  delay: 20.882725715637207
   quality: 1
 - name: 美国 CloudFlare节点
   type: vmess
@@ -26,7 +26,7 @@ proxies:
   uuid: 0b4c4ed4-deed-4bda-ae3d-6c8ccd1d1199
   alterId: 0
   cipher: auto
-  delay: 19.749999046325684
+  delay: 27.174949645996094
   quality: 1
 - name: vmess
   type: vmess
@@ -35,7 +35,7 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 193.52376461029053
+  delay: 382.35628604888916
   quality: 1
 - name: 亚太地区 V2CROSS.COM
   type: vmess
