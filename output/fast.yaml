@@ -1,15 +1,6 @@
 port: 7890
 mode: rule
 proxies:
-- name: github.com/freefq - 美国Fastly全球Anycast节点 13
-  type: vmess
-  server: gov.uk
-  port: 443
-  uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
-  alterId: 0
-  cipher: auto
-  delay: 6.240367889404297
-  quality: 1
 - name: github.com/freefq - 美国CloudFlare公司CDN节点 9
   type: vmess
   server: 104.21.82.183
@@ -17,7 +8,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 8.524060249328613
+  delay: 5.5408477783203125
   quality: 1
 - name: 英国 V2CROSS.COM
   type: vmess
@@ -26,7 +17,16 @@ proxies:
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
-  delay: 63.37463855743408
+  delay: 62.078118324279785
+  quality: 1
+- name: github.com/freefq - 美国Fastly全球Anycast节点 13
+  type: vmess
+  server: gov.uk
+  port: 443
+  uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
+  alterId: 0
+  cipher: auto
+  delay: 107.67245292663574
   quality: 1
 - name: vmess
   type: vmess
@@ -35,8 +35,35 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 119.42338943481445
+  delay: 264.0620470046997
   quality: 1
+- name: 甘肃省兰州市 移动
+  type: vmess
+  server: m.cnmjin.net
+  port: 16617
+  uuid: 42355be2-af61-4b3b-866c-d3c5ea8748c5
+  alterId: 0
+  cipher: auto
+  delay: 272.59790897369385
+  quality: 1
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: 103.181.164.237
+  port: 34114
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  delay: 9999
+  quality: 0
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: 103.181.164.145
+  port: 54022
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 0
+  cipher: auto
+  delay: 9999
+  quality: 0
 - name: github.com/freefq - 印度  2
   type: vmess
   server: 202.78.162.5
@@ -116,10 +143,13 @@ proxy-groups:
   interval: 120
   tolerance: 20
   proxies:
-  - github.com/freefq - 美国Fastly全球Anycast节点 13
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
   - 英国 V2CROSS.COM
+  - github.com/freefq - 美国Fastly全球Anycast节点 13
   - vmess
+  - 甘肃省兰州市 移动
+  - 亚太地区 V2CROSS.COM
+  - 亚太地区 V2CROSS.COM
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
   - github.com/freefq - 美国CloudFlare公司CDN节点 6
