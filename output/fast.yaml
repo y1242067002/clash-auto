@@ -8,16 +8,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 13.193607330322266
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: cxsfvn.uhomdex.shop
-  port: 443
-  uuid: bb6e260e-b80d-4365-b252-9fbe466f1f34
-  alterId: 0
-  cipher: auto
-  delay: 29.616713523864746
+  delay: 5.660295486450195
   quality: 1
 - name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
@@ -26,7 +17,34 @@ proxies:
   uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 89.28680419921875
+  delay: 6.727933883666992
+  quality: 1
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  delay: 10.693669319152832
+  quality: 1
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  delay: 17.16923713684082
+  quality: 1
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  delay: 66.72072410583496
   quality: 1
 - name: vmess
   type: vmess
@@ -35,7 +53,7 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 96.0536003112793
+  delay: 154.72805500030518
   quality: 1
 - name: 伊朗 V2CROSS.COM
   type: vmess
@@ -44,17 +62,8 @@ proxies:
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
-  delay: 279.57022190093994
+  delay: 321.76876068115234
   quality: 1
-- name: 亚太地区 V2CROSS.COM
-  type: vmess
-  server: 103.181.164.145
-  port: 54022
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 0
-  cipher: auto
-  delay: 9999
-  quality: 0
 - name: github.com/freefq - 印度  2
   type: vmess
   server: 202.78.162.5
@@ -135,11 +144,12 @@ proxy-groups:
   tolerance: 20
   proxies:
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
-  - 美国 CloudFlare节点
   - github.com/freefq - 美国Fastly全球Anycast节点 13
+  - 美国 CloudFlare节点
+  - 美国 CloudFlare节点
+  - 英国 V2CROSS.COM
   - vmess
   - 伊朗 V2CROSS.COM
-  - 亚太地区 V2CROSS.COM
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
   - github.com/freefq - 美国CloudFlare公司CDN节点 6
