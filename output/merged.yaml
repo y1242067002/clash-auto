@@ -1,6 +1,15 @@
 port: 7890
 mode: rule
 proxies:
+- name: 巴西圣保罗 CloudFlare节点
+  type: vmess
+  server: 188.114.96.3
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  delay: 14.348983764648438
+  quality: 1
 - name: github.com/freefq - 美国CloudFlare公司CDN节点 9
   type: vmess
   server: 104.21.82.183
@@ -8,7 +17,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 17.913103103637695
+  delay: 15.586376190185547
   quality: 1
 - name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
@@ -17,16 +26,25 @@ proxies:
   uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 20.210623741149902
+  delay: 23.378491401672363
   quality: 1
 - name: 美国 CloudFlare节点
   type: vmess
-  server: zdqbk.cmvvb.online
+  server: c7.620720.xyz
   port: 8443
-  uuid: a2852e93-7255-4aae-9412-38273fdacd31
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  delay: 47.12998867034912
+  delay: 33.52975845336914
+  quality: 1
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  delay: 40.77780246734619
   quality: 1
 - name: vmess
   type: vmess
@@ -35,16 +53,7 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 222.71203994750977
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: cf.090227.xyz
-  port: 443
-  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
-  alterId: 0
-  cipher: auto
-  delay: 335.8805179595947
+  delay: 280.2152633666992
   quality: 1
 - name: github.com/freefq - 印度  2
   type: vmess
@@ -125,11 +134,12 @@ proxy-groups:
   interval: 120
   tolerance: 20
   proxies:
+  - 巴西圣保罗 CloudFlare节点
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
   - github.com/freefq - 美国Fastly全球Anycast节点 13
   - 美国 CloudFlare节点
+  - 英国 V2CROSS.COM
   - vmess
-  - 美国 CloudFlare节点
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
   - github.com/freefq - 美国CloudFlare公司CDN节点 6
