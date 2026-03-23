@@ -1,6 +1,15 @@
 port: 7890
 mode: rule
 proxies:
+- name: 巴西圣保罗 CloudFlare节点
+  type: vmess
+  server: 188.114.96.3
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  delay: 2.4268627166748047
+  quality: 1
 - name: github.com/freefq - 美国CloudFlare公司CDN节点 9
   type: vmess
   server: 104.21.82.183
@@ -8,7 +17,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 2.378702163696289
+  delay: 2.4394989013671875
   quality: 1
 - name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
@@ -17,16 +26,16 @@ proxies:
   uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 4.005789756774902
+  delay: 4.155516624450684
   quality: 1
 - name: 美国 CloudFlare节点
   type: vmess
-  server: cg1d05.waimaojd.com
+  server: nqzkb.cmvvb.online
   port: 443
-  uuid: 6abe3ac8-e1f8-4b24-bb67-191bc23b5fab
+  uuid: 16604b48-7497-428c-a6d4-b017b3a30ce4
   alterId: 0
   cipher: auto
-  delay: 7.200121879577637
+  delay: 6.867766380310059
   quality: 1
 - name: 美国 CloudFlare节点
   type: vmess
@@ -35,25 +44,7 @@ proxies:
   uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  delay: 14.387249946594238
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  delay: 15.402793884277344
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: c7.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  delay: 15.822172164916992
+  delay: 7.038712501525879
   quality: 1
 - name: vmess
   type: vmess
@@ -62,7 +53,16 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 20.523786544799805
+  delay: 43.70856285095215
+  quality: 1
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  delay: 64.67628479003906
   quality: 1
 - name: github.com/freefq - 印度  2
   type: vmess
@@ -143,13 +143,13 @@ proxy-groups:
   interval: 120
   tolerance: 20
   proxies:
+  - 巴西圣保罗 CloudFlare节点
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
   - github.com/freefq - 美国Fastly全球Anycast节点 13
   - 美国 CloudFlare节点
   - 美国 CloudFlare节点
-  - 美国 CloudFlare节点
-  - 美国 CloudFlare节点
   - vmess
+  - 英国 V2CROSS.COM
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
   - github.com/freefq - 美国CloudFlare公司CDN节点 6
