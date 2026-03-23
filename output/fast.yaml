@@ -8,43 +8,7 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 2.292037010192871
-  quality: 1
-- name: 巴西圣保罗 CloudFlare节点
-  type: vmess
-  server: 188.114.96.3
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  delay: 2.3217201232910156
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: cxsfvn.uhomdex.shop
-  port: 443
-  uuid: bb6e260e-b80d-4365-b252-9fbe466f1f34
-  alterId: 0
-  cipher: auto
-  delay: 5.831241607666016
-  quality: 1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  delay: 19.045352935791016
-  quality: 1
-- name: 英国 V2CROSS.COM
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  delay: 66.69938564300537
+  delay: 2.4765729904174805
   quality: 1
 - name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
@@ -53,7 +17,16 @@ proxies:
   uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 69.53561305999756
+  delay: 11.629939079284668
+  quality: 1
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: t1.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  delay: 16.84248447418213
   quality: 1
 - name: vmess
   type: vmess
@@ -62,7 +35,7 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 139.59813117980957
+  delay: 161.08667850494385
   quality: 1
 - name: github.com/freefq - 印度  2
   type: vmess
@@ -144,11 +117,8 @@ proxy-groups:
   tolerance: 20
   proxies:
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
-  - 巴西圣保罗 CloudFlare节点
-  - 美国 CloudFlare节点
-  - 美国 CloudFlare节点
-  - 英国 V2CROSS.COM
   - github.com/freefq - 美国Fastly全球Anycast节点 13
+  - 美国 CloudFlare节点
   - vmess
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
