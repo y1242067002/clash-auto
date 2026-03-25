@@ -13,11 +13,11 @@ jobs:
       - name: 📥 Checkout
         uses: actions/checkout@v4
 
-      - name: 📦 Install subconverter
+      - name: 📦 Download subconverter (Linux)
         run: |
-          git clone https://github.com/tindy2013/subconverter.git
-          cd subconverter
-          chmod +x subconverter
+          wget https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
+          tar -zxvf subconverter_linux64.tar.gz
+          chmod +x subconverter/subconverter
 
       - name: ⚙️ Generate Subscription
         run: |
