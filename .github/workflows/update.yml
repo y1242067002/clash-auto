@@ -2,7 +2,7 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # 每6小时更新一次
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -23,19 +23,18 @@ jobs:
         run: |
           cd subconverter
 
-          # 生成 pref.ini
-          cat > pref.ini <<EOF
-url=$(paste -sd '|' ../sources.txt)
-target=clash
-emoji=true
-list=true
-sort=true
-udp=true
-scv=true
-fdn=true
-config=../config.yaml
-output=../output.yaml
-EOF
+          URLS=$(paste -sd '|' ../sources.txt)
+
+          echo "url=$URLS" > pref.ini
+          echo "target=clash" >> pref.ini
+          echo "emoji=true" >> pref.ini
+          echo "list=true" >> pref.ini
+          echo "sort=true" >> pref.ini
+          echo "udp=true" >> pref.ini
+          echo "scv=true" >> pref.ini
+          echo "fdn=true" >> pref.ini
+          echo "config=../config.yaml" >> pref.ini
+          echo "output=../output.yaml" >> pref.ini
 
           ./subconverter
 
