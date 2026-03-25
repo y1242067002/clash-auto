@@ -1,15 +1,6 @@
 port: 7890
 mode: rule
 proxies:
-- name: 巴西圣保罗 CloudFlare节点
-  type: vmess
-  server: 188.114.96.3
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  delay: 2.397894859313965
-  quality: 1
 - name: github.com/freefq - 美国CloudFlare公司CDN节点 9
   type: vmess
   server: 104.21.82.183
@@ -17,16 +8,16 @@ proxies:
   uuid: 5a7021e0-26b4-45d6-b175-fe551601ca97
   alterId: 0
   cipher: auto
-  delay: 2.593398094177246
+  delay: 2.005934715270996
   quality: 1
-- name: github.com/freefq - 美国Fastly全球Anycast节点 13
+- name: 美国 CloudFlare节点
   type: vmess
-  server: gov.uk
-  port: 443
-  uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
+  server: c7.620720.xyz
+  port: 8443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
   alterId: 0
   cipher: auto
-  delay: 62.209129333496094
+  delay: 7.1343183517456055
   quality: 1
 - name: vmess
   type: vmess
@@ -35,35 +26,26 @@ proxies:
   uuid: 8237ec34-143a-11ee-8019-000017022008
   alterId: 64
   cipher: auto
-  delay: 209.04171466827393
+  delay: 59.90481376647949
   quality: 1
-- name: 伊朗 V2CROSS.COM
+- name: github.com/freefq - 美国Fastly全球Anycast节点 13
   type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: gov.uk
+  port: 443
+  uuid: 77848824-93b7-4b89-ffd0-e91afff406ce
   alterId: 0
   cipher: auto
-  delay: 286.40222549438477
+  delay: 113.02530765533447
   quality: 1
-- name: 亚太地区 V2CROSS.COM
+- name: 中国 阿里云
   type: vmess
-  server: 103.181.164.145
-  port: 51556
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 8.223.63.189
+  port: 443
+  uuid: 462d9694-62b5-4781-a287-61a422b920e8
   alterId: 0
   cipher: auto
-  delay: 9999
-  quality: 0
-- name: 中国 V2CROSS.COM
-  type: vmess
-  server: v12.hdacd.com
-  port: 30812
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  delay: 9999
-  quality: 0
+  delay: 199.26178455352783
+  quality: 1
 - name: github.com/freefq - 印度  2
   type: vmess
   server: 202.78.162.5
@@ -143,13 +125,11 @@ proxy-groups:
   interval: 120
   tolerance: 20
   proxies:
-  - 巴西圣保罗 CloudFlare节点
   - github.com/freefq - 美国CloudFlare公司CDN节点 9
-  - github.com/freefq - 美国Fastly全球Anycast节点 13
+  - 美国 CloudFlare节点
   - vmess
-  - 伊朗 V2CROSS.COM
-  - 亚太地区 V2CROSS.COM
-  - 中国 V2CROSS.COM
+  - github.com/freefq - 美国Fastly全球Anycast节点 13
+  - 中国 阿里云
   - github.com/freefq - 印度  2
   - github.com/freefq - 美国CloudFlare公司CDN节点 4
   - github.com/freefq - 美国CloudFlare公司CDN节点 6
