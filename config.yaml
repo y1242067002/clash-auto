@@ -1,0 +1,29 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+
+proxy-groups:
+  - name: 🚀 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - default
+
+  - name: 🎯 手动选择
+    type: select
+    use:
+      - default
+
+  - name: 🔁 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - default
+
+rules:
+  - MATCH,🚀 自动选择
