@@ -10,35 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 📦 Download subconverter (Linux)
+      - name: Download subconverter
         run: |
           wget https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
           tar -zxvf subconverter_linux64.tar.gz
           chmod +x subconverter/subconverter
 
-      - name: ⚙️ Generate Subscription
+      - name: Standardize Sources with timeout
         run: |
-          cd subconverter
+          mkdir -p standard
+          while read url; do
+            filename=$(basename $url)
+            echo "Processing $url ..."
+            timeout 15 ./subconverter/subconverter -i "$url" -t clash -o "standard/$filename" || echo "⚠️ skip $url"
+          done < sources.txt
 
-          URLS=$(paste -sd '|' ../sources.txt)
+      - name: Merge YAMLs
+        run: |
+          echo "proxies:" > output.yaml
+          for f in standard/*.yaml; do
+            if [ -s "$f" ]; then
+              yq eval '.proxies' "$f" >> output.yaml
+            else
+              echo "⚠️ skip empty file $f"
+            fi
+          done
+          yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' config.yaml output.yaml > final.yaml
+          mv final.yaml output.yaml
 
-          echo "url=$URLS" > pref.ini
-          echo "target=clash" >> pref.ini
-          echo "emoji=true" >> pref.ini
-          echo "list=true" >> pref.ini
-          echo "sort=true" >> pref.ini
-          echo "udp=true" >> pref.ini
-          echo "scv=true" >> pref.ini
-          echo "fdn=true" >> pref.ini
-          echo "config=../config.yaml" >> pref.ini
-          echo "output=../output.yaml" >> pref.ini
-
-          ./subconverter
-
-      - name: 📤 Commit & Push
+      - name: Commit & Push
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
