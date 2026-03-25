@@ -1,0 +1,26 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+proxy-groups:
+  - name: "\U0001F680 自动选择"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - default
+  - name: "\U0001F3AF 手动选择"
+    type: select
+    use:
+      - default
+  - name: "\U0001F501 故障转移"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - default
+rules:
+  - "MATCH,\U0001F680 自动选择"
+proxies:
